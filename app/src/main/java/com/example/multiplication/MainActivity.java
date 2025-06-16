@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         textView2.setText(String.valueOf(md.getNum2()));
     }
     public void checkAnswer(View view) {
-        //todo need to check value from user that is the correct answer of mul two rand number
-
         EditText editTextNumber = findViewById(R.id.editTextNumber);
         String numberString = editTextNumber.getText().toString();
         if(!numberString.isEmpty())
