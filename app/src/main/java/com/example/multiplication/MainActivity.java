@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         String numberString = editTextNumber.getText().toString();
         if(!numberString.isEmpty())
         {
+            //
             int number = Integer.parseInt(numberString);
             if (md.isAnswerCorrect(number))
                 Toast.makeText(this, "correct answer", Toast.LENGTH_SHORT).show();
