@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="Math Exercises"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="לוח הכפל"
+            android:onClick="setLeftBtnFunc"
+            />
+
+        <Button
+            android:id="@+id/btnMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="כפל עד 20"
+            android:onClick="setMiddleBtnFunc"
+            />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            android:text="אתגר"
+            android:onClick="setRightBtnFunc"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:layout_width="330dp"
+        android:layout_height="153dp"
+        android:text=""
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:textSize="35dp"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="330dp"
+        android:layout_height="153dp"
+        android:text=""
+        android:textSize="30dp"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="תשובה"
+        android:textAlignment="center"
+        android:inputType="number"
+        android:textSize="30dp"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="בדיקה"
+        android:onClick="checkAnswer"
+        />
+
+
+</LinearLayout>
