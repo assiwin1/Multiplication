@@ -1,5 +1,6 @@
 package com.example.multiplication;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -14,6 +15,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private Model md = new Model();
+    static boolean virgin = true;
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +63,24 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "correct answer", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(this, "wrong answer", Toast.LENGTH_SHORT).show();
+            savePref();
 
         }else
             Toast.makeText(this, "please enter a number", Toast.LENGTH_SHORT).show();
     }
+    public void savePref()
+    {
+        if (virgin)
+        {
+            sharedPref = this.getSharedPreferences("myPrefs", MODE_PRIVATE);
+            editor = sharedPref.edit();
+            virgin = false;
+        }
+
+        editor.putInt("success", md.getSuccessCounter());
+        editor.putInt("total tries", md.getTriesCounter());
+        editor.commit();
+        //editor.apply();
+    }
+
 }
